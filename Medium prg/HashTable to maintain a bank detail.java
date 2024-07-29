@@ -1,35 +1,12 @@
-7.	Write a program to print the first n perfect numbers. (Hint Perfect number means a positive integer that is equal to the sum of its proper divisors)
-Sample Input:
-N = 3
-Sample Output:
-First 3 perfect numbers are: 6 , 28 , 496
-
-
-public class PerfectNumberFinder {
-    public static boolean isPerfectNumber(int num) {
-        int sum = 0;
-        for (int i = 1; i <= num / 2; i++) {
-            if (num % i == 0) {
-                sum += i;
-            }
-        }
-        return sum == num;
-    }
+import java.util.Hashtable;
+public class BankDetails {
     public static void main(String[] args) {
-        int N = 3;
-        int count = 0;
-        int num = 2;
-        System.out.print("First " + N + " perfect numbers are: ");
-        while (count < N) {
-            if (isPerfectNumber(num)) {
-                System.out.print(num);
-                count++;
-                if (count < N) {
-                    System.out.print(" , ");
-                }
-            }
-            num++;
-        }
-        System.out.println();
+        Hashtable<Integer, String> bankDetails = new Hashtable<>();
+        bankDetails.put(1001, "Alice");
+        bankDetails.put(1002, "Bob");
+        bankDetails.put(1003, "Charlie");
+        System.out.println("Size of HashTable: " + bankDetails.size());
+        bankDetails.clear();
+        System.out.println("HashTable cleared. Size now: " + bankDetails.size());
     }
 }
